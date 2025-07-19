@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+    <!-- Dark background -->
+    <rect width="128" height="128" fill="#0a0a0a"/>
+
+    <!-- Pizza slice shape -->
+    <path d="M64 20 L100 100 L28 100 Z" fill="#8b0000" stroke="#ff6b6b" stroke-width="2"/>
+
+    <!-- Pizza toppings (pepperoni) -->
+    <circle cx="55" cy="70" r="4" fill="#4a0000"/>
+    <circle cx="75" cy="65" r="4" fill="#4a0000"/>
+    <circle cx="65" cy="80" r="4" fill="#4a0000"/>
+
+    <!-- Creepy eyes in the pizza -->
+    <circle cx="58" cy="55" r="3" fill="#ff6b6b"/>
+    <circle cx="70" cy="55" r="3" fill="#ff6b6b"/>
+
+    <!-- Glowing effect -->
+    <defs>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Apply glow to the pizza -->
+    <path d="M64 20 L100 100 L28 100 Z" fill="none" stroke="#ff6b6b" stroke-width="1" filter="url(#glow)" opacity="0.7"/>
+</svg>

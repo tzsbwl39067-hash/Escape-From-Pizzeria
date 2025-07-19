@@ -1,0 +1,207 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	keywords?: string;
+	ogImage?: string;
+}
+
+const {
+	title,
+	description = "Play Escape From Pizzeria online - The ultimate horror escape game experience. Free to play with full walkthrough and story guides.",
+	keywords = "escape from pizzeria, horror game, online game, puzzle game, indie game, free game",
+	ogImage = "/og-image.jpg"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
+
+		<title>{title}</title>
+
+		<!-- Preload critical fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	/* CSS Custom Properties for Horror Theme */
+	:root {
+		/* Dark Color Palette */
+		--color-bg-primary: #0a0a0a;
+		--color-bg-secondary: #1a1a1a;
+		--color-bg-tertiary: #2a2a2a;
+
+		/* Horror Accent Colors */
+		--color-accent-red: #8b0000;
+		--color-accent-rust: #b7410e;
+		--color-accent-sickly-green: #4a5d23;
+		--color-accent-warning-yellow: #ffd700;
+
+		/* Text Colors */
+		--color-text-primary: #e0e0e0;
+		--color-text-secondary: #b0b0b0;
+		--color-text-muted: #808080;
+		--color-text-accent: #ff6b6b;
+
+		/* Fonts */
+		--font-horror: 'Creepster', cursive;
+		--font-retro: 'Orbitron', monospace;
+		--font-body: 'Orbitron', monospace;
+
+		/* Spacing */
+		--spacing-xs: 0.25rem;
+		--spacing-sm: 0.5rem;
+		--spacing-md: 1rem;
+		--spacing-lg: 2rem;
+		--spacing-xl: 4rem;
+
+		/* Shadows and Effects */
+		--shadow-glow: 0 0 20px rgba(255, 107, 107, 0.3);
+		--shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
+		--border-glow: 1px solid rgba(255, 107, 107, 0.5);
+	}
+
+	/* Reset and Base Styles */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: var(--font-body);
+		background: var(--color-bg-primary);
+		color: var(--color-text-primary);
+		line-height: 1.6;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+		position: relative;
+		overflow-x: hidden;
+	}
+
+	/* Horror Background Effects */
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 20%, rgba(74, 93, 35, 0.1) 0%, transparent 50%);
+		pointer-events: none;
+		z-index: -1;
+	}
+
+	/* Typography */
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-horror);
+		color: var(--color-text-accent);
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		margin-bottom: var(--spacing-md);
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 4rem);
+		letter-spacing: 0.1em;
+	}
+
+	h2 {
+		font-size: clamp(1.5rem, 4vw, 2.5rem);
+	}
+
+	p {
+		margin-bottom: var(--spacing-md);
+		color: var(--color-text-secondary);
+	}
+
+	/* Links */
+	a {
+		color: var(--color-text-accent);
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	a:hover {
+		color: var(--color-accent-warning-yellow);
+		text-shadow: var(--shadow-glow);
+	}
+
+	/* Buttons */
+	.btn {
+		display: inline-block;
+		padding: var(--spacing-md) var(--spacing-lg);
+		background: linear-gradient(45deg, var(--color-accent-red), var(--color-accent-rust));
+		color: var(--color-text-primary);
+		font-family: var(--font-retro);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		border: var(--border-glow);
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: var(--shadow-dark);
+	}
+
+	.btn:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-glow), var(--shadow-dark);
+		background: linear-gradient(45deg, var(--color-accent-rust), var(--color-accent-red));
+	}
+
+	.btn-primary {
+		font-size: clamp(1.2rem, 3vw, 2rem);
+		padding: var(--spacing-lg) var(--spacing-xl);
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.8; }
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		:root {
+			--spacing-lg: 1.5rem;
+			--spacing-xl: 2rem;
+		}
+
+		.btn-primary {
+			padding: var(--spacing-md) var(--spacing-lg);
+		}
+	}
+</style>

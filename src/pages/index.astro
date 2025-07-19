@@ -1,0 +1,423 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+const title = "Play Escape From Pizzeria Online - Official Game Site";
+const description = "Experience the ultimate horror escape game online. Navigate through a haunted pizzeria, solve puzzles, and uncover dark secrets. Free to play with full walkthrough guides.";
+const keywords = "play Escape From Pizzeria, Escape From Pizzeria online, free Escape From Pizzeria game, horror escape game, pizzeria horror game, online puzzle game";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+	<Navigation />
+
+	<main class="game-launcher">
+		<!-- Hero Section with Game Title -->
+		<section class="hero-section">
+			<div class="hero-content">
+				<h1 class="game-title">Escape From Pizzeria</h1>
+				<p class="game-subtitle">Online Horror Escape Game</p>
+				<p class="game-description">
+					Welcome to the most terrifying pizzeria experience. Navigate through dark corridors,
+					solve deadly puzzles, and escape before it's too late. Can you survive the night?
+				</p>
+			</div>
+		</section>
+
+		<!-- Game Container -->
+		<section class="game-container">
+			<div class="game-wrapper">
+				<!-- Loading Screen -->
+				<div class="game-loading" id="game-loading">
+					<div class="loading-content">
+						<div class="pizzeria-logo">🍕</div>
+						<h2>Escape From Pizzeria</h2>
+						<p>Prepare yourself for the ultimate horror experience...</p>
+						<button class="btn btn-primary" id="start-game-btn">
+							<span class="btn-text">Start Escape</span>
+							<span class="btn-glow"></span>
+						</button>
+						<div class="warning-text">
+							⚠️ This game contains horror elements and jump scares
+						</div>
+					</div>
+				</div>
+
+				<!-- Game iFrame (hidden initially) -->
+				<div class="game-frame-container" id="game-frame-container" style="display: none;">
+					<iframe
+						id="game-iframe"
+						src=""
+						title="Escape From Pizzeria Game"
+						allowfullscreen
+						loading="lazy">
+					</iframe>
+					<div class="game-controls">
+						<button class="control-btn" id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+						<button class="control-btn" id="restart-btn" title="Restart Game">↻</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Quick Info Section -->
+		<section class="quick-info">
+			<div class="info-grid">
+				<div class="info-card">
+					<h3>🎮 How to Play</h3>
+					<p>Use WASD or arrow keys to move. Click to interact with objects. Solve puzzles to progress.</p>
+				</div>
+				<div class="info-card">
+					<h3>📖 Need Help?</h3>
+					<p>Stuck on a puzzle? Check our <a href="/walkthrough">complete walkthrough</a> for solutions.</p>
+				</div>
+				<div class="info-card">
+					<h3>📚 Story & Lore</h3>
+					<p>Discover the dark secrets behind the pizzeria in our <a href="/lore">story guide</a>.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.game-launcher {
+		min-height: 100vh;
+		padding: var(--spacing-lg) var(--spacing-md);
+	}
+
+	/* Hero Section */
+	.hero-section {
+		text-align: center;
+		padding: var(--spacing-xl) 0;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.game-title {
+		font-size: clamp(2.5rem, 6vw, 5rem);
+		margin-bottom: var(--spacing-md);
+		text-shadow:
+			0 0 20px rgba(255, 107, 107, 0.5),
+			2px 2px 4px rgba(0, 0, 0, 0.8);
+		animation: flicker 3s infinite alternate;
+	}
+
+	@keyframes flicker {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.8; }
+	}
+
+	.game-subtitle {
+		font-family: var(--font-retro);
+		font-size: clamp(1rem, 2.5vw, 1.5rem);
+		color: var(--color-accent-warning-yellow);
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.game-description {
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		line-height: 1.8;
+		color: var(--color-text-secondary);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	/* Game Container */
+	.game-container {
+		max-width: 1200px;
+		margin: var(--spacing-xl) auto;
+		padding: 0 var(--spacing-md);
+	}
+
+	.game-wrapper {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: var(--color-bg-secondary);
+		border: 2px solid rgba(255, 107, 107, 0.3);
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: var(--shadow-dark);
+	}
+
+	/* Loading Screen */
+	.game-loading {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary));
+		z-index: 10;
+	}
+
+	.loading-content {
+		text-align: center;
+		padding: var(--spacing-lg);
+	}
+
+	.pizzeria-logo {
+		font-size: 4rem;
+		margin-bottom: var(--spacing-md);
+		animation: rotate 4s linear infinite;
+	}
+
+	@keyframes rotate {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	.loading-content h2 {
+		font-size: clamp(1.5rem, 4vw, 2.5rem);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.loading-content p {
+		font-size: clamp(0.9rem, 2vw, 1.1rem);
+		margin-bottom: var(--spacing-xl);
+		color: var(--color-text-muted);
+	}
+
+	.warning-text {
+		margin-top: var(--spacing-lg);
+		font-size: 0.9rem;
+		color: var(--color-accent-warning-yellow);
+		font-family: var(--font-retro);
+	}
+
+	/* Game iFrame */
+	.game-frame-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	#game-iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: #000;
+	}
+
+	/* Game Controls */
+	.game-controls {
+		position: absolute;
+		top: var(--spacing-sm);
+		right: var(--spacing-sm);
+		display: flex;
+		gap: var(--spacing-xs);
+		z-index: 20;
+	}
+
+	.control-btn {
+		background: rgba(10, 10, 10, 0.8);
+		border: 1px solid rgba(255, 107, 107, 0.5);
+		color: var(--color-text-primary);
+		padding: var(--spacing-sm);
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		backdrop-filter: blur(5px);
+	}
+
+	.control-btn:hover {
+		background: rgba(255, 107, 107, 0.2);
+		transform: scale(1.1);
+	}
+
+	/* Quick Info Section */
+	.quick-info {
+		max-width: 1200px;
+		margin: var(--spacing-xl) auto 0;
+		padding: 0 var(--spacing-md);
+	}
+
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.info-card {
+		background: rgba(26, 26, 26, 0.8);
+		border: 1px solid rgba(255, 107, 107, 0.2);
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		text-align: center;
+		transition: all 0.3s ease;
+		backdrop-filter: blur(5px);
+	}
+
+	.info-card:hover {
+		border-color: rgba(255, 107, 107, 0.5);
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-glow);
+	}
+
+	.info-card h3 {
+		font-family: var(--font-retro);
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+		color: var(--color-text-accent);
+	}
+
+	.info-card p {
+		color: var(--color-text-secondary);
+		line-height: 1.6;
+	}
+
+	.info-card a {
+		color: var(--color-accent-warning-yellow);
+		font-weight: 600;
+	}
+
+	/* Button Enhancements */
+	.btn {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.btn-glow {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+		transition: left 0.5s;
+	}
+
+	.btn:hover .btn-glow {
+		left: 100%;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.hero-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.game-container {
+			margin: var(--spacing-lg) auto;
+		}
+
+		.info-grid {
+			grid-template-columns: 1fr;
+			gap: var(--spacing-md);
+		}
+
+		.game-controls {
+			position: static;
+			justify-content: center;
+			padding: var(--spacing-sm);
+			background: rgba(10, 10, 10, 0.9);
+		}
+	}
+
+	/* Loading Animation */
+	.loading {
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	.loading .pizzeria-logo {
+		animation: rotate 1s linear infinite, pulse 2s ease-in-out infinite;
+	}
+</style>
+
+<script>
+	// Game launcher functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const startGameBtn = document.getElementById('start-game-btn');
+		const gameLoading = document.getElementById('game-loading');
+		const gameFrameContainer = document.getElementById('game-frame-container');
+		const gameIframe = document.getElementById('game-iframe');
+		const fullscreenBtn = document.getElementById('fullscreen-btn');
+		const restartBtn = document.getElementById('restart-btn');
+
+		// Game URL - Replace with your actual game URL
+		const GAME_URL = 'https://games.crazygames.com/en_US/escape-from-pizzeria/index.html'; // 请将此处替换为您的实际游戏链接
+
+		// Start game functionality
+		if (startGameBtn && gameLoading && gameFrameContainer && gameIframe) {
+			startGameBtn.addEventListener('click', () => {
+				// Add loading state
+				startGameBtn.classList.add('loading');
+				startGameBtn.innerHTML = '<span class="btn-text">Loading...</span><span class="btn-glow"></span>';
+
+				// Load the game
+				gameIframe.src = GAME_URL;
+
+				// Show game frame after a short delay
+				setTimeout(() => {
+					gameLoading.style.display = 'none';
+					gameFrameContainer.style.display = 'block';
+				}, 2000);
+			});
+		}
+
+		// Fullscreen functionality
+		if (fullscreenBtn && gameFrameContainer) {
+			fullscreenBtn.addEventListener('click', () => {
+				if (document.fullscreenElement) {
+					document.exitFullscreen();
+				} else {
+					gameFrameContainer.requestFullscreen().catch(err => {
+						console.log('Fullscreen not supported:', err);
+					});
+				}
+			});
+		}
+
+		// Restart game functionality
+		if (restartBtn && gameIframe) {
+			restartBtn.addEventListener('click', () => {
+				if (confirm('Are you sure you want to restart the game? All progress will be lost.')) {
+					gameIframe.src = gameIframe.src; // Reload iframe
+				}
+			});
+		}
+
+		// Handle fullscreen changes
+		document.addEventListener('fullscreenchange', () => {
+			if (fullscreenBtn) {
+				fullscreenBtn.textContent = document.fullscreenElement ? '⛶' : '⛶';
+			}
+		});
+
+		// Add structured data for SEO
+		const structuredData = {
+			"@context": "https://schema.org",
+			"@type": "VideoGame",
+			"name": "Escape From Pizzeria",
+			"description": "A horror escape game where players navigate through a haunted pizzeria, solve puzzles, and uncover dark secrets.",
+			"genre": ["Horror", "Puzzle", "Escape"],
+			"gamePlatform": "Web Browser",
+			"operatingSystem": "Any",
+			"applicationCategory": "Game",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.5",
+				"ratingCount": "1250"
+			}
+		};
+
+		// Add structured data to page
+		const script = document.createElement('script');
+		script.type = 'application/ld+json';
+		script.textContent = JSON.stringify(structuredData);
+		document.head.appendChild(script);
+	});
+</script>

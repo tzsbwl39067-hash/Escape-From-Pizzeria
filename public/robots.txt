@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://escapefrompizzeria.top/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to index the game and guides
+Allow: /
+Allow: /walkthrough
+Allow: /lore
+
+# Block any admin or development paths (if they exist in the future)
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow common assets
+Allow: /favicon.svg
+Allow: /og-image.jpg
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.svg

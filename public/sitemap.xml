@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Main game page -->
+  <url>
+    <loc>https://escapefrompizzeria.top/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://escapefrompizzeria.top/og-image.jpg</image:loc>
+      <image:title>Escape From Pizzeria - Horror Game</image:title>
+      <image:caption>Play Escape From Pizzeria online - The ultimate horror escape game experience</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Walkthrough page -->
+  <url>
+    <loc>https://escapefrompizzeria.top/walkthrough</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://escapefrompizzeria.top/walkthrough-image.jpg</image:loc>
+      <image:title>Escape From Pizzeria Walkthrough</image:title>
+      <image:caption>Complete walkthrough and guide for Escape From Pizzeria with all endings</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Lore page -->
+  <url>
+    <loc>https://escapefrompizzeria.top/lore</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://escapefrompizzeria.top/lore-image.jpg</image:loc>
+      <image:title>Escape From Pizzeria Story & Lore</image:title>
+      <image:caption>Discover the dark history and hidden secrets of Escape From Pizzeria</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
