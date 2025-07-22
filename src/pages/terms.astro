@@ -1,0 +1,290 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+const title = "Terms of Service - Escape From Pizzeria";
+const description = "Terms of Service for Escape From Pizzeria. Read our terms and conditions for playing our horror escape game and using our website.";
+const keywords = "terms of service, terms and conditions, Escape From Pizzeria terms, user agreement, game rules";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+	<Navigation />
+	
+	<main class="terms-page">
+		<div class="container">
+			<!-- Header -->
+			<header class="page-header">
+				<h1>Terms of Service</h1>
+				<p class="page-subtitle">Rules of the Pizzeria</p>
+				<div class="last-updated">
+					Last updated: January 1, 2024
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="terms-content">
+				<section class="terms-section">
+					<h2>1. Acceptance of Terms</h2>
+					<p>
+						By accessing and playing Escape From Pizzeria, you agree to be bound by these Terms of Service. 
+						If you do not agree to these terms, please do not use our game or website.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>2. Game Description</h2>
+					<p>
+						Escape From Pizzeria is a horror-themed escape game intended for entertainment purposes. 
+						The game contains:
+					</p>
+					<ul>
+						<li><strong>Horror Elements:</strong> Scary imagery, sounds, and jump scares</li>
+						<li><strong>Puzzle Challenges:</strong> Logic-based puzzles and riddles</li>
+						<li><strong>Atmospheric Content:</strong> Dark themes and suspenseful gameplay</li>
+					</ul>
+					<div class="warning-box">
+						⚠️ <strong>Age Restriction:</strong> This game is recommended for users 13 years and older due to horror content.
+					</div>
+				</section>
+
+				<section class="terms-section">
+					<h2>3. User Responsibilities</h2>
+					<p>As a player, you agree to:</p>
+					<ul>
+						<li>Use the game for personal, non-commercial purposes only</li>
+						<li>Not attempt to reverse engineer, hack, or exploit the game</li>
+						<li>Not share or distribute game content without permission</li>
+						<li>Respect other users and maintain appropriate conduct</li>
+						<li>Not use the game for any illegal or harmful activities</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>4. Intellectual Property</h2>
+					<p>
+						All content in Escape From Pizzeria, including but not limited to graphics, audio, text, 
+						and game mechanics, is protected by copyright and other intellectual property laws. 
+						You may not copy, distribute, or create derivative works without explicit permission.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>5. Disclaimer of Warranties</h2>
+					<p>
+						The game is provided "as is" without warranties of any kind. We do not guarantee that:
+					</p>
+					<ul>
+						<li>The game will be error-free or uninterrupted</li>
+						<li>All features will work perfectly on all devices</li>
+						<li>Your game progress will always be saved</li>
+						<li>The service will be available at all times</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>6. Limitation of Liability</h2>
+					<p>
+						We shall not be liable for any direct, indirect, incidental, or consequential damages 
+						arising from your use of the game. This includes but is not limited to:
+					</p>
+					<ul>
+						<li>Loss of game progress or data</li>
+						<li>Technical issues or device problems</li>
+						<li>Emotional distress from horror content</li>
+						<li>Time spent playing the game</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>7. Health and Safety</h2>
+					<div class="warning-box">
+						⚠️ <strong>Important Health Notice:</strong>
+					</div>
+					<p>This game contains:</p>
+					<ul>
+						<li><strong>Flashing Lights:</strong> May trigger seizures in sensitive individuals</li>
+						<li><strong>Jump Scares:</strong> Sudden frightening moments</li>
+						<li><strong>Loud Sounds:</strong> Unexpected audio effects</li>
+						<li><strong>Disturbing Content:</strong> Horror themes and imagery</li>
+					</ul>
+					<p>
+						Please discontinue play if you experience discomfort, dizziness, or any adverse reactions.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>8. Privacy and Data</h2>
+					<p>
+						Your privacy is important to us. Please review our 
+						<a href="/privacy" class="inline-link">Privacy Policy</a> to understand how we collect, 
+						use, and protect your information.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>9. Modifications to Terms</h2>
+					<p>
+						We reserve the right to modify these Terms of Service at any time. Changes will be 
+						effective immediately upon posting. Your continued use of the game constitutes 
+						acceptance of the modified terms.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>10. Termination</h2>
+					<p>
+						We may terminate or suspend your access to the game at any time, without prior notice, 
+						for conduct that we believe violates these Terms of Service or is harmful to other users.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>11. Contact Information</h2>
+					<p>
+						If you have questions about these Terms of Service, please contact us through our 
+						website or social media channels. We'll do our best to address your concerns.
+					</p>
+				</section>
+
+				<div class="final-note">
+					<p>
+						<strong>Remember:</strong> Escape From Pizzeria is a work of fiction. Any resemblance to 
+						real pizzerias, living or dead, is purely coincidental. Enjoy the game responsibly!
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.terms-page {
+		min-height: 100vh;
+		background: var(--color-bg-primary);
+		padding-top: 100px;
+		padding-bottom: var(--spacing-xl);
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 var(--spacing-md);
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: var(--spacing-xl);
+		padding: var(--spacing-xl) 0;
+		border-bottom: 2px solid rgba(255, 107, 107, 0.2);
+	}
+
+	.page-header h1 {
+		font-family: 'Creepster', cursive;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		color: var(--color-accent);
+		margin-bottom: var(--spacing-sm);
+		text-shadow: var(--shadow-text);
+	}
+
+	.page-subtitle {
+		font-family: 'Orbitron', monospace;
+		font-size: 1.2rem;
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.last-updated {
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.6);
+		font-style: italic;
+	}
+
+	.terms-content {
+		line-height: 1.8;
+	}
+
+	.terms-section {
+		margin-bottom: var(--spacing-xl);
+		padding: var(--spacing-lg);
+		background: rgba(255, 255, 255, 0.02);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 107, 107, 0.1);
+	}
+
+	.terms-section h2 {
+		font-family: 'Orbitron', monospace;
+		font-size: 1.5rem;
+		color: var(--color-accent);
+		margin-bottom: var(--spacing-md);
+		border-bottom: 1px solid rgba(255, 107, 107, 0.3);
+		padding-bottom: var(--spacing-xs);
+	}
+
+	.terms-section p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.terms-section ul {
+		color: rgba(255, 255, 255, 0.9);
+		padding-left: var(--spacing-lg);
+	}
+
+	.terms-section li {
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.terms-section strong {
+		color: var(--color-accent);
+	}
+
+	.warning-box {
+		background: rgba(255, 107, 107, 0.1);
+		border: 1px solid rgba(255, 107, 107, 0.3);
+		border-radius: 6px;
+		padding: var(--spacing-md);
+		margin: var(--spacing-md) 0;
+		color: rgba(255, 255, 255, 0.95);
+	}
+
+	.inline-link {
+		color: var(--color-accent);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition: border-color 0.3s ease;
+	}
+
+	.inline-link:hover {
+		border-bottom-color: var(--color-accent);
+	}
+
+	.final-note {
+		margin-top: var(--spacing-xl);
+		padding: var(--spacing-lg);
+		background: rgba(255, 107, 107, 0.05);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 107, 107, 0.2);
+		text-align: center;
+	}
+
+	.final-note p {
+		color: rgba(255, 255, 255, 0.9);
+		font-style: italic;
+		margin: 0;
+	}
+
+	/* Mobile responsiveness */
+	@media (max-width: 768px) {
+		.terms-page {
+			padding-top: 80px;
+		}
+
+		.terms-section {
+			padding: var(--spacing-md);
+		}
+
+		.terms-section h2 {
+			font-size: 1.3rem;
+		}
+	}
+</style>

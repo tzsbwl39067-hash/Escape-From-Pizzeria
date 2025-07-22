@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+const title = "Privacy Policy - Escape From Pizzeria";
+const description = "Privacy Policy for Escape From Pizzeria. Learn how we collect, use, and protect your personal information when you play our horror escape game.";
+const keywords = "privacy policy, data protection, Escape From Pizzeria privacy, user data, cookies policy";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+	<Navigation />
+	
+	<main class="privacy-page">
+		<div class="container">
+			<!-- Header -->
+			<header class="page-header">
+				<h1>Privacy Policy</h1>
+				<p class="page-subtitle">Your Privacy Matters to Us</p>
+				<div class="last-updated">
+					Last updated: January 1, 2024
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="privacy-content">
+				<section class="privacy-section">
+					<h2>1. Information We Collect</h2>
+					<p>
+						When you play Escape From Pizzeria, we may collect certain information to improve your gaming experience:
+					</p>
+					<ul>
+						<li><strong>Game Progress:</strong> Your game saves, achievements, and progress data</li>
+						<li><strong>Technical Information:</strong> Browser type, device information, and IP address</li>
+						<li><strong>Usage Analytics:</strong> How you interact with the game and website</li>
+						<li><strong>Cookies:</strong> Small files stored on your device for functionality and analytics</li>
+					</ul>
+				</section>
+
+				<section class="privacy-section">
+					<h2>2. How We Use Your Information</h2>
+					<p>We use the collected information for the following purposes:</p>
+					<ul>
+						<li>To provide and maintain the game service</li>
+						<li>To save your game progress and preferences</li>
+						<li>To improve game performance and user experience</li>
+						<li>To analyze usage patterns and optimize the website</li>
+						<li>To ensure the security and integrity of our services</li>
+					</ul>
+				</section>
+
+				<section class="privacy-section">
+					<h2>3. Data Storage and Security</h2>
+					<p>
+						Your game data is stored locally in your browser using localStorage and sessionStorage. 
+						We implement appropriate security measures to protect your information against unauthorized 
+						access, alteration, disclosure, or destruction.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>4. Third-Party Services</h2>
+					<p>
+						We may use third-party services for analytics and game hosting. These services have their 
+						own privacy policies and may collect information independently. We recommend reviewing 
+						their privacy policies:
+					</p>
+					<ul>
+						<li>Google Analytics (if applicable)</li>
+						<li>Hosting providers</li>
+						<li>Content delivery networks</li>
+					</ul>
+				</section>
+
+				<section class="privacy-section">
+					<h2>5. Cookies and Local Storage</h2>
+					<p>
+						We use cookies and local storage to enhance your gaming experience. You can control 
+						cookie settings through your browser, but disabling them may affect game functionality.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>6. Children's Privacy</h2>
+					<p>
+						Our game is intended for users aged 13 and above due to horror content. We do not 
+						knowingly collect personal information from children under 13. If you believe we have 
+						collected such information, please contact us immediately.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>7. Your Rights</h2>
+					<p>You have the right to:</p>
+					<ul>
+						<li>Access your personal data</li>
+						<li>Correct inaccurate data</li>
+						<li>Delete your data (right to be forgotten)</li>
+						<li>Object to data processing</li>
+						<li>Data portability</li>
+					</ul>
+				</section>
+
+				<section class="privacy-section">
+					<h2>8. Changes to This Policy</h2>
+					<p>
+						We may update this Privacy Policy from time to time. We will notify you of any changes 
+						by posting the new Privacy Policy on this page and updating the "Last updated" date.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>9. Contact Us</h2>
+					<p>
+						If you have any questions about this Privacy Policy or our data practices, 
+						please contact us through our website or social media channels.
+					</p>
+				</section>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.privacy-page {
+		min-height: 100vh;
+		background: var(--color-bg-primary);
+		padding-top: 100px;
+		padding-bottom: var(--spacing-xl);
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 var(--spacing-md);
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: var(--spacing-xl);
+		padding: var(--spacing-xl) 0;
+		border-bottom: 2px solid rgba(255, 107, 107, 0.2);
+	}
+
+	.page-header h1 {
+		font-family: 'Creepster', cursive;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		color: var(--color-accent);
+		margin-bottom: var(--spacing-sm);
+		text-shadow: var(--shadow-text);
+	}
+
+	.page-subtitle {
+		font-family: 'Orbitron', monospace;
+		font-size: 1.2rem;
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.last-updated {
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.6);
+		font-style: italic;
+	}
+
+	.privacy-content {
+		line-height: 1.8;
+	}
+
+	.privacy-section {
+		margin-bottom: var(--spacing-xl);
+		padding: var(--spacing-lg);
+		background: rgba(255, 255, 255, 0.02);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 107, 107, 0.1);
+	}
+
+	.privacy-section h2 {
+		font-family: 'Orbitron', monospace;
+		font-size: 1.5rem;
+		color: var(--color-accent);
+		margin-bottom: var(--spacing-md);
+		border-bottom: 1px solid rgba(255, 107, 107, 0.3);
+		padding-bottom: var(--spacing-xs);
+	}
+
+	.privacy-section p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.privacy-section ul {
+		color: rgba(255, 255, 255, 0.9);
+		padding-left: var(--spacing-lg);
+	}
+
+	.privacy-section li {
+		margin-bottom: var(--spacing-xs);
+	}
+
+	.privacy-section strong {
+		color: var(--color-accent);
+	}
+
+	/* Mobile responsiveness */
+	@media (max-width: 768px) {
+		.privacy-page {
+			padding-top: 80px;
+		}
+
+		.privacy-section {
+			padding: var(--spacing-md);
+		}
+
+		.privacy-section h2 {
+			font-size: 1.3rem;
+		}
+	}
+</style>

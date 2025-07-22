@@ -46,7 +46,26 @@ const {
 		<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<slot />
+		<div class="page-wrapper">
+			<slot />
+			<footer class="main-footer">
+				<div class="footer-container">
+					<div class="footer-content">
+						<div class="footer-section">
+							<p class="copyright">
+								© 2024 Escape From Pizzeria. All rights reserved.
+							</p>
+						</div>
+						<div class="footer-section">
+							<nav class="footer-nav">
+								<a href="/privacy" class="footer-link">Privacy Policy</a>
+								<a href="/terms" class="footer-link">Terms of Service</a>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
 
@@ -193,6 +212,104 @@ const {
 		50% { opacity: 0.8; }
 	}
 
+	/* Page wrapper for sticky footer */
+	.page-wrapper {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.page-wrapper > :global(main) {
+		flex: 1;
+	}
+
+	/* Footer Styles */
+	.main-footer {
+		background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);
+		border-top: 2px solid rgba(255, 107, 107, 0.3);
+		padding: var(--spacing-lg) 0;
+		margin-top: auto;
+		position: relative;
+	}
+
+	.main-footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg,
+			transparent 0%,
+			rgba(255, 107, 107, 0.5) 50%,
+			transparent 100%
+		);
+	}
+
+	.footer-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 var(--spacing-md);
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+	}
+
+	.footer-section {
+		display: flex;
+		align-items: center;
+	}
+
+	.copyright {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.9rem;
+		margin: 0;
+		font-family: 'Orbitron', monospace;
+	}
+
+	.footer-nav {
+		display: flex;
+		gap: var(--spacing-lg);
+	}
+
+	.footer-link {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-family: 'Orbitron', monospace;
+		transition: all 0.3s ease;
+		position: relative;
+		padding: var(--spacing-xs) var(--spacing-sm);
+		border-radius: 4px;
+	}
+
+	.footer-link:hover {
+		color: var(--color-accent);
+		background: rgba(255, 107, 107, 0.1);
+		transform: translateY(-1px);
+	}
+
+	.footer-link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 1px;
+		background: var(--color-accent);
+		transition: all 0.3s ease;
+		transform: translateX(-50%);
+	}
+
+	.footer-link:hover::after {
+		width: 80%;
+	}
+
 	/* Responsive Design */
 	@media (max-width: 768px) {
 		:root {
@@ -202,6 +319,32 @@ const {
 
 		.btn-primary {
 			padding: var(--spacing-md) var(--spacing-lg);
+		}
+
+		.footer-content {
+			flex-direction: column;
+			text-align: center;
+			gap: var(--spacing-sm);
+		}
+
+		.footer-nav {
+			gap: var(--spacing-md);
+		}
+
+		.copyright {
+			font-size: 0.8rem;
+		}
+
+		.footer-link {
+			font-size: 0.8rem;
+			padding: var(--spacing-xs);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.footer-nav {
+			flex-direction: column;
+			gap: var(--spacing-sm);
 		}
 	}
 </style>
